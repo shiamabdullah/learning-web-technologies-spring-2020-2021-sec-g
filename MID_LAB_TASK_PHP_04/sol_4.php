@@ -1,11 +1,33 @@
 <?php
-    function check($num) {
-    if($num%2=='0')
-    echo "The number is Even";
-    else
-    echo "The number is Odd";
+    function check($n1,$n2,$n3) {
+        echo "Largest Number is :";
+        if($n1>$n2 )
+        {
+            if($n1>$n3)
+            {
+                echo" $n1";
+            }
+            else
+            {
+                echo" $n3";
+            }
+        }
+        else
+        {
+            if($n2>$n3)
+            {
+                echo" $n2";
+            }
+            else
+            {
+                echo" $n3";
+            }
+        }
   }
 
-  $num = readline("Enter number to check : "); 
-  check($num)
+  $n1 = readline("Enter 1st number "); 
+  $n2 = readline("Enter 2nd number "); 
+  $n3 = readline("Enter 3rd number "); 
+
+  check($n1,$n2,$n3);
 ?>
