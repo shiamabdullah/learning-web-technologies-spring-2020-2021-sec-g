@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>EMAIL Input field</title>
+	<title>Date Input field</title>
 </head>
 <body>
 	<form method="POST" action="#">
