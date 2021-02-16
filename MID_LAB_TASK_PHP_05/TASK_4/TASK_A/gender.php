@@ -7,7 +7,8 @@ if (isset($_POST['submit'])){
         echo "Null submission----- ";
     }else
     {
-        echo "Success" ;  }
+        echo "Success <br> $gender" ;
+         }
 }
 else{
     echo "Invalid Request-----";
