@@ -1,42 +1,25 @@
 <?php
 
-$name = $password = "";
+$cn = $np = $rnp ="";
 
 if(isset($_POST['submit'])){
 
-    $name 		=  $_POST['username'];
-    $password   =  $_POST['pass'];
-        if($name == ""){
-            echo "Null submission... \n"; 
-        }
-        else if(strlen($name)<2){
-            echo "name must be atleast 2 char\n";
-            
-        }
-        
-        else{
-            echo " name: $name \n";
+    $cn 		=  $_POST['pass_cur'];
+    $np 		=  $_POST['pass_new'];
+    $rnp 		=  $_POST['re_pass_new'];
 
-        }
-
-
-        if(strlen($password)<8){
-            echo "password must be 8 char long\n";
-        }
-
-        if (!strpos($password, '#') and !strpos($password, '@') and !strpos($password, '$') and  !strpos($password, '%')) {
-            echo "\n password must contain this special characters (@, #, $, %)";
+        if($np != $cn and $np==$rnp ){
+            echo "changed \n"; 
         }
        
+        
         else{
-            echo "\n password $password";
+            echo "validatipn error";
+
+        }
          
             
         }
-
-
-
-}
 ?>
 
 <!DOCTYPE html>
@@ -63,12 +46,11 @@ if(isset($_POST['submit'])){
                 
                 <tr>
                     <td> Retype New Password :</td>
-                    <td><input type="name" name="pass_new"  value=""> <br> </td>
+                    <td><input type="name" name="re_pass_new"  value=""> <br> </td>
 
                 </tr> 
-
+                </table>
                 <input type="submit" name="submit" value="Submit">
-
 
                 
 
