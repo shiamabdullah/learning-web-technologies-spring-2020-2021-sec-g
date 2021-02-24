@@ -6,12 +6,15 @@ if(isset($_POST['submit'])){
 
     $name 		=  $_POST['username'];
     $password   =  $_POST['pass'];
-        if($name == ""){
+        if(empty($name)){
             echo "Null submission... \n"; 
         }
         else if(strlen($name)<2){
             echo "name must be atleast 2 char\n";
             
+        }
+        elseif(!ctype_alnum($name)){
+            echo "name must contain alphanumeric char\n";
         }
         
         else{
