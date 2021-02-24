@@ -1,6 +1,7 @@
 <?php
 
 $name = $password = "";
+$allowed = array(".", "-", "_");
 
 if(isset($_POST['submit'])){
 
@@ -13,7 +14,7 @@ if(isset($_POST['submit'])){
             echo "name must be atleast 2 char\n";
             
         }
-        elseif(!ctype_alnum($name)){
+        elseif(!ctype_alnum(str_replace($allowed, '', $name ))){
             echo "name must contain alphanumeric char\n";
         }
         
