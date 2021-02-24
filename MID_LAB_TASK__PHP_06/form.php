@@ -10,14 +10,14 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password    =  $_POST['password'];
     $con_password  =  $_POST['con_password'];
-    $gender = $_POST['gender'];
     $dob = $_POST['dob'];
     $allowed = array(".", "-", "_");
 
+    print_r($_POST);
 
     //name
-        if ($username == "") {
-            echo "Null submission... \n";
+        if (empty($name) or empty($username) or empty($email) or empty($password) or empty($con_password) or empty($dob)) {
+            echo "Fillup all \n";
         } 
         else if(strlen($username)<2){
             echo "name must be atleast 2 char\n";
@@ -41,6 +41,8 @@ if (isset($_POST['submit'])) {
     else{
         echo"\npassword: $password";
     }
+
+    
 }
 
 
