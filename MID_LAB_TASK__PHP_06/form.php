@@ -4,7 +4,6 @@ use function PHPSTORM_META\elementType;
 
 if (isset($_POST['submit'])) {
     echo 'pressed';
-}
 
     $name = $_POST['name'];
     $username = $_POST['username'];
@@ -29,7 +28,7 @@ if (isset($_POST['submit'])) {
         }
 
         else{
-            echo($username);
+            echo "username :$username)";
         }
 
     //password
@@ -42,6 +41,7 @@ if (isset($_POST['submit'])) {
     else{
         echo"\npassword: $password";
     }
+}
 
 
 ?>
