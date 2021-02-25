@@ -5,6 +5,7 @@ $cn = $np = $rnp ="";
 if(isset($_POST['submit'])){
 
     $cn 		=  $_POST['pass_cur'];
+    
     $np 		=  $_POST['pass_new'];
     $rnp 		=  $_POST['re_pass_new'];
 
