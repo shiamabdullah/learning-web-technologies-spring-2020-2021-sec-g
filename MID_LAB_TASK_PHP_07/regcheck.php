@@ -11,7 +11,7 @@
             $con_password  =  $_POST['con_password'];
             $dob = $_POST['dob'];
             $allowed = array(".", "-", "_");
-    
+            $gender=$_POST['gender'];
         // print_r($_POST);
     
         //name
@@ -45,6 +45,9 @@
             else{
                     echo"\npassword: $password";
                         echo"sucess";
+                    $user = ['username'=> $username, 'password'=> $password, 'email'=>$email, 'gender'=>$gender, 'dob'=>$dob];
+                    $_SESSION['current_user'] = $user;
+                    print_r($user);
                 }
         
              }
