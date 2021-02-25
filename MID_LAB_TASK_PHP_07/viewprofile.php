@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if(isset($_SESSION['flag'])){
-    $username = $_SESSION['current_user']['username'];
+    $user = $_SESSION['current_user'];
 
 }
     
@@ -14,31 +14,34 @@ if(isset($_SESSION['flag'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VIEW PROFILE</title>
 
-        <table width="100%" align="center">
-            <tr>
-            <th align="Left">
-                <img src="logo.png" height="50px">
-            </th>
-
-
-            <th align="Right">
-                        <h3>
-                            logged in as <?php echo"$username" ; ?> | 
-                            <a href="logout.php" >Logout</a> |
-                        </h3>
-                        
-            </th>
-            </tr>
-        </table>
+       
 
 </head>
 
 <body>
+
+    <table width="60%" align="center" border="1">
+                <thead>
+                    <tr>
+                    <th >
+                        <img src="logo.png" height="50px">
+                    </th>
+                    
+                    
+                    <th align="right">
+                                <h3>
+                                    logged in as <?php echo $user['username']; ?> | 
+                                    <a href="logout.php" >Logout</a> 
+                                </h3>
+                                
+                    </th>
+                    </tr>
+                </thead>
         
-    <table width="100%" border="1">
-                
-                <td width='100px'>
-                <h3>Account</h3>
+          
+            <tbody>
+                <td width='300px' >
+                <h3><u>Account</u></h3>
                     <ul>
                         <li><a href="dashboard.php"> Dashboard</a></li>
                         <li><a href="viewprofile.php"> View Profile</a></li>
@@ -50,21 +53,58 @@ if(isset($_SESSION['flag'])){
             
                 </td>
             
-                <td >
-                       <fieldset>
-                           <legend>PROFILE </legend>
-                       </fieldset>
-                
+                <td align="center" >
+                       
+                    <fieldset style="width:70%">
+                        <legend>PROFILE </legend>
+                        <table>
+                            <tr>
+                                <td>Name<br></td>
+                                <td>:<?php echo $user['username']; ?></td>
+                                
+                                <td rowspan="3" ><img src="user.png" width="100" height="100"></td>
 
+                                
+                            <tr>
+                            <td>Email<br></td>
+                                <td>:<?php echo $user['email']; ?></td>
+                            </tr>    
+                               
+                                
+                               <tr>
+                                    <td>Gender<br></td>
+                                    <td>:<?php echo $user['gender']; ?></td>
+                               </tr>
+                                
+                             <tr>
+                                    <td>Dob<br></td>
+                                    <td>:<?php echo $user['dob']; ?></td>
+                                    
+                                    <td> <a href="changepic.php" >Change</a> </td>
+                             </tr>
+                             
+    
+                            
+
+                            
+                        </table>
+                        
+                         <a href="editprofile.html"> Edit Profile</a>
+                        
+                    </fieldset>
+                
                 </td>
                 
+            </tbody>
+           
+           <tfoot>
+                <td colspan="2" align="center"> Copyright@2017 </td> 
+            </tfoot>
+
+            </table>
 
 
 
-    </table>
 </body>
 
-<footer>
-  <center> <br> <br> Copyright@2017</center>  
-</footer>
 </html>

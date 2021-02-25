@@ -45,7 +45,7 @@
             else{
                     echo"\npassword: $password";
                         echo"sucess";
-                    $user = ['username'=> $username, 'password'=> $password, 'email'=>$email, 'gender'=>$gender, 'dob'=>$dob];
+                    $user = ['name'=> $name,'username'=> $username, 'password'=> $password, 'email'=>$email, 'gender'=>$gender, 'dob'=>$dob];
                     $_SESSION['current_user'] = $user;
                     print_r($user);
                 }
