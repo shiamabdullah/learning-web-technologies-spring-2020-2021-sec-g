@@ -45,10 +45,10 @@ if(isset($_SESSION['flag'])){
                     <ul>
                         <li><a href="dashboard.php"> Dashboard</a></li>
                         <li><a href="viewprofile.php"> View Profile</a></li>
-                        <li><a href="editprofile.html"> Edit Profile</a></li>
-                        <li><a href="changephoto.html"> Change Profile Picture</a></li>
-                        <li><a href="changepass.html"> Change Passowrd</a></li>
-                        <li><a href="logout.html"> Logout </a></li>
+                        <li><a href="editprofile.php"> Edit Profile</a></li>
+                        <li><a href="changephoto.php"> Change Profile Picture</a></li>
+                        <li><a href="changepass.php"> Change Passowrd</a></li>
+                        <li><a href="logout.php"> Logout </a></li>
                     </ul>
             
                 </td>
@@ -89,7 +89,7 @@ if(isset($_SESSION['flag'])){
                             
                         </table>
                         
-                         <a href="editprofile.html"> Edit Profile</a>
+                         <a href="editprofile.php"> Edit Profile</a>
                         
                     </fieldset>
                 
