@@ -20,14 +20,15 @@
 				$json = json_encode($user);
 				echo $json;
 				$file_name= $_SERVER['DOCUMENT_ROOT'].'/MID_LAB_TASK_JSON_08/user-mgt/model/user.json';
-				$myfile = fopen($_SERVER['DOCUMENT_ROOT'].'/MID_LAB_TASK_JSON_08/user-mgt/model/user.json', "w");
+				$file_name2= $_SERVER['DOCUMENT_ROOT'].'/MID_LAB_TASK_JSON_08/user-mgt/model/users.json';
+				//$myfile = fopen($_SERVER['DOCUMENT_ROOT'].'/MID_LAB_TASK_JSON_08/user-mgt/model/user.json', "w");
 				$myfile = fopen($file_name, "w");
 				fwrite($myfile, $json);
 				fclose($myfile);
 
-				$myfile = fopen($file_name, "r");
-				$data = fread($myfile, filesize($file_name));
-				print_r($data);
+        		$myfile2=fopen($file_name2, 'w');
+        		fwrite($myfile2, '['.$json.']');
+				fclose($myfile2);
 
 
 				header('location: ../view/login.html');

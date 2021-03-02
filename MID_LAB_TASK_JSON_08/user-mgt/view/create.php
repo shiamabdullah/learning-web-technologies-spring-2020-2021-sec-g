@@ -3,7 +3,7 @@
 	include('header.php');
 ?>
 
-<form method="post" action="../controller/regCheck.php">
+<form method="post" action="../controller/usersRegCheck.php">
 	<fieldset>
 		<legend>Create User</legend>
 		<table>
@@ -27,7 +27,7 @@
 				<td></td>
 				<td>
 					<input type="submit" name="signup" value="Create"> 
-					<a href="home.php">Back	</a>
+					<a href="create.php">Back	</a>
 				</td>
 			</tr>
 		</table>
