@@ -1,49 +1,63 @@
 <?php
 	$title = "User List Page";
 	include('header.php');
-?>
 
+	$myfile = fopen('../model/users.json', "r");
+    $data = fread($myfile, filesize('../model/users.json'));
+    $users = json_decode($data, true);
+	
+?>
 	<a href="home.php">Back</a> |
 	<a href="../controller/logout.php">logout</a>	
 	<br>
 	
 	<h1>User list</h1>
-
 	<table border="1">
-		<tr>
+        <tr>
 			<td>ID</td>
 			<td>NAME</td>
 			<td>EMAIL</td>
 			<td>ACTION</td>
 		</tr>
-		<tr>
-			<td>1</td>
-			<td>ALAMIN</td>
-			<td>ALAMIN@GMAIL.COM</td>
-			<td>
-				<a href="edit.php?id=1"> EDIT</a> |
-				<a href="delete.php?id=1"> DELETE</a>
-			</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>ALAMIN</td>
-			<td>ALAMIN@GMAIL.COM</td>
-			<td>
-				<a href="edit.php?id=2"> EDIT</a> |
-				<a href="delete.html"> DELETE</a>
-			</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>ALAMIN</td>
-			<td>ALAMIN@GMAIL.COM</td>
-			<td>
-				<a href="edit.php?id=3"> EDIT</a> |
-				<a href="delete.html"> DELETE</a>
-			</td>
-		</tr>
-	</table>
+    <?php 
+    foreach ($users as $id=>$user)
+    {   echo "<tr>";
+
+		$ids=$id+1;
+        echo "<td>  $ids </td>";
+
+     foreach ($user as $type=>$value){
+        if ($type=='username'){
+            echo "<td>";
+            echo "$value";
+        }
+        echo "</td>";
+
+        if ($type=='email'){
+            echo "<td>";
+            echo "$value";
+        }
+        echo "</td>";
+
+     }
+
+     echo "<td>";
+     echo "<a href=\"edit.php?id=$ids\">";
+     echo" Edit </a>";
+
+     echo "<a href=\"delete.php?id=$ids\">";
+     echo" Delete </a>";
+     echo "</td>";
+
+     echo "</tr>";
+
+    }
+
+
+    
+
+     ?>
+ </table>
 
 <?php
 	include('footer.php');
