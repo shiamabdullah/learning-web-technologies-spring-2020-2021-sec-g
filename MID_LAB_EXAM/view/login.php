@@ -1,7 +1,8 @@
 <?php 
-    $title="Login";
+    $title="Sign Up";
 	include('header.php');
 ?>
+<html>
 <center>
 <form method="post" action="../controller/logCheck.php">
 	<table border="0" cellspacing="0" cellpadding="0">
@@ -22,3 +23,7 @@
 	</table>
 </form>
 </center>
+</html>
+<?php 
+include('footer.php');
+ ?>

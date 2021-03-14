@@ -32,4 +32,7 @@
 	</table>
 </form>
 </center>
-		
+
+<?php 
+include('footer.php');
+ ?>

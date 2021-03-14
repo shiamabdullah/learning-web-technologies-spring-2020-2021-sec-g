@@ -18,6 +18,7 @@ if (session_status() == PHP_SESSION_NONE) {
 		}else{
 
 			$key = array_search($userid, array_column($user, 'userid'));
+           
             if ($user[$key]['usertype']=='Admin'){
                 if($user[$key]['password']==$password){
                     $_SESSION['flag'] = true;
@@ -42,9 +43,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     echo "invalid user...";
                 }
             }
-			else{
-				echo "invalid user...";
-			}
+		
 		}
 	}
 
