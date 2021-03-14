@@ -1,21 +1,21 @@
 <?php 
-    $title="Sign Up";
+    $title="Login";
 	include('header.php');
 ?>
 <center>
-<form>
+<form method="post" action="../controller/logCheck.php">
 	<table border="0" cellspacing="0" cellpadding="0">
 		<tr>
 			<td>
 				<fieldset>
 					<legend><h3>LOGIN</h3></legend>
 					User Id<br/>
-					<input type="text"><br/>                               
+					<input type="text" name="userid" value=""> <br/>                           
 					Password<br/>
-					<input type="password">
+					<input type="password" name="pass"  value="">
 					<br /><hr/>
-					<input type="button" value="Login">
-					<a href="registration.html">Register</a>
+					<input type="submit" name="submit" value="Login"> 
+					<a href="registration.php">Register</a>
 				</fieldset>
 			</td>
 		</tr>                                
