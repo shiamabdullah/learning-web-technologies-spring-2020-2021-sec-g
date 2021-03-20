@@ -25,7 +25,7 @@
                         <td>{$row['email']}</td>
                         <td>
                         <a href=\"edit.php?id={$row['id']}\"> EDIT </a> |
-                        <a href=\"delete.php?id={$row['id']}\"> DELETE </a>
+                        <a href=\"../controller/delete.php?id={$row['id']}\"> DELETE </a>
                         </td>
                     </tr>";
         }
