@@ -1,26 +1,30 @@
 <?php
 	$title = "Edit Page";
 	include('header.php');
+	require ('../model/dbcon.php');
+	$id= $_GET['id'];
+	$sql= "SELECT `id`, `name`, `password`, `email` FROM `user` WHERE `id`=$id";
+	$result = mysqli_query($conn, $sql);
+	$userdata = mysqli_fetch_assoc($result);
+	print_r($userdata);
 
-	echo $_GET['id'];
 ?>
-
-	<form method="post" action="../controller/update.php">
+	<form method="post" action="../controller/editcheck.php">
 		<fieldset>
 			<legend>EDIT User</legend>
 			<table>
 				<tr>
 					<td>Username</td>
-					<td><input type="text" name="username" value="alamin"></td>
+					<td><input type="text" name="username" value="<?php echo $userdata['name']; ?>"></td>
 				</tr>
 				<tr>
 					<td>Password</td>
-					<td><input type="password" name="password" value="123"></td>
+					<td><input type="password" name="password" value="<?php echo $userdata['password']; ?>"></td>
 				</tr>
 				
 				<tr>
 					<td>Email</td>
-					<td><input type="email" name="email" value="alamin@aiub.edu"></td>
+					<td><input type="email" name="email" value="<?php echo $userdata['email']; ?>"></td>
 				</tr>
 				<tr>
 					<td></td>
