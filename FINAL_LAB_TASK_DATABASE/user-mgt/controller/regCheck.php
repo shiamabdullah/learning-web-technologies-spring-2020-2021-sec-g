@@ -1,6 +1,6 @@
 <?php
 	session_start();
-
+	require ('../model/dbcon.php');
 	if(isset($_POST['signup'])){
 
 		$username = $_POST['username'];
@@ -14,24 +14,14 @@
 			if($password == $repass){
 
 				$user = ['username'=> $username, 'password'=> $password, 'email'=>$email];
-
 				$_SESSION['current_user'] = $user;
-				
-				$json = json_encode($user);
-				echo $json;
-				$file_name= $_SERVER['DOCUMENT_ROOT'].'/MID_LAB_TASK_JSON_08/user-mgt/model/user.json';
-				$file_name2= $_SERVER['DOCUMENT_ROOT'].'/MID_LAB_TASK_JSON_08/user-mgt/model/users.json';
-				//$myfile = fopen($_SERVER['DOCUMENT_ROOT'].'/MID_LAB_TASK_JSON_08/user-mgt/model/user.json', "w");
-				$myfile = fopen($file_name, "w");
-				fwrite($myfile, $json);
-				fclose($myfile);
 
-        		$myfile2=fopen($file_name2, 'w');
-        		fwrite($myfile2, '['.$json.']');
-				fclose($myfile2);
-
-
+				$sql= "INSERT INTO `user` (`id`, `name`, `password`, `email`) VALUES ('NULL', '$username', '$password', '$email')";
+				$result = mysqli_query($conn, $sql);
+				echo $result;					
+				if($result== '1'){
 				header('location: ../view/login.html');
+				}
 			}else{
 				echo "password & confirm password mismatch...";
 			}
