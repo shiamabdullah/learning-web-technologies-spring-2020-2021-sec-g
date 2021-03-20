@@ -6,10 +6,11 @@
 	$sql= "SELECT `id`, `name`, `password`, `email` FROM `user` WHERE `id`=$id";
 	$result = mysqli_query($conn, $sql);
 	$userdata = mysqli_fetch_assoc($result);
-	print_r($userdata);
+	//print_r($userdata);
 
 ?>
-	<form method="post" action="../controller/editcheck.php">
+
+	<form method="post" action="../controller/editcheck.php?id=<?php echo $id; ?>">
 		<fieldset>
 			<legend>EDIT User</legend>
 			<table>
@@ -29,7 +30,7 @@
 				<tr>
 					<td></td>
 					<td>
-						<input type="submit" name="signup" value="Update"> 
+						<input type="submit" name="edit" value="Update"> 
 						<a href="user_list.php">Back</a>
 					</td>
 				</tr>

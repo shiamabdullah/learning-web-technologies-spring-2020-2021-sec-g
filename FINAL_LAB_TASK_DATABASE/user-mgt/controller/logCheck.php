@@ -23,7 +23,6 @@ if (session_status() == PHP_SESSION_NONE) {
 			$result = mysqli_query($conn, $sql);
 			$row = mysqli_num_rows($result);
 			
-			print_r($userdata);
 			//echo ($userdata['id']);
 			//$user = ['username'=> $username, 'password'=> $password, 'email'=>$email];
 			//$_SESSION['current_user'] = $user;
