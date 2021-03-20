@@ -1,11 +1,7 @@
 <?php
 	$title = "User List Page";
 	include('header.php');
-
-	$myfile = fopen('../model/users.json', "r");
-    $data = fread($myfile, filesize('../model/users.json'));
-    $users = json_decode($data, true);
-	
+    require ('../model/dbcon.php');	
 ?>
 	<a href="home.php">Back</a> |
 	<a href="../controller/logout.php">logout</a>	
@@ -19,45 +15,22 @@
 			<td>EMAIL</td>
 			<td>ACTION</td>
 		</tr>
-    <?php 
-    foreach ($users as $id=>$user)
-    {   echo "<tr>";
+    <?php $sql = "select * from user";
+    	$result = mysqli_query($conn, $sql);
+        while ($row = mysqli_fetch_assoc($result)) {
 
-		$ids=$id+1;
-        echo "<td>  $ids </td>";
-
-     foreach ($user as $type=>$value){
-        if ($type=='username'){
-            echo "<td>";
-            echo "$value";
+            echo 	"<tr>
+                        <td>{$row['id']}</td>
+                        <td>{$row['name']}</td>
+                        <td>{$row['email']}</td>
+                        <td>
+                        <a href=\"edit.php?id={$row['id']}\"> EDIT </a> |
+                        <a href=\"delete.php?id={$row['id']}\"> DELETE </a>
+                        </td>
+                    </tr>";
         }
-        echo "</td>";
-
-        if ($type=='email'){
-            echo "<td>";
-            echo "$value";
-        }
-        echo "</td>";
-
-     }
-
-     echo "<td>";
-     echo "<a href=\"edit.php?id=$ids\">";
-     echo" Edit </a>";
-
-     echo "<a href=\"delete.php?id=$ids\">";
-     echo" Delete </a>";
-     echo "</td>";
-
-     echo "</tr>";
-
-    }
-
-
-    
-
-     ?>
- </table>
+    ?>
+    </table>
 
 <?php
 	include('footer.php');

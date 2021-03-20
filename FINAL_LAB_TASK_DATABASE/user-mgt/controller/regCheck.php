@@ -13,8 +13,8 @@
 		}else{
 			if($password == $repass){
 
-				$user = ['username'=> $username, 'password'=> $password, 'email'=>$email];
-				$_SESSION['current_user'] = $user;
+				// $user = ['username'=> $username, 'password'=> $password, 'email'=>$email];
+				// $_SESSION['current_user'] = $user;
 
 				$sql= "INSERT INTO `user` (`id`, `name`, `password`, `email`) VALUES ('NULL', '$username', '$password', '$email')";
 				$result = mysqli_query($conn, $sql);
