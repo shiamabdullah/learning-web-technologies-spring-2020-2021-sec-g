@@ -3,7 +3,7 @@
 	include('header.php');
 ?>
 
-<form method="post" action="../controller/usersRegCheck.php">
+<form method="post" action="../controller/regCheck.php">
 	<fieldset>
 		<legend>Create User</legend>
 		<table>
