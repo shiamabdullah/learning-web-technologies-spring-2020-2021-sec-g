@@ -1,8 +1,8 @@
 <?php
 	$title = "Edit Page";
 	include('header.php');
-
-	echo $_GET['id'];
+	
+	$userdata = getUserbyId($_GET['id']);
 ?>
 
 	<form method="post" action="../controller/update.php">
@@ -25,7 +25,7 @@
 				<tr>
 					<td></td>
 					<td>
-						<input type="submit" name="signup" value="Update"> 
+						<input type="submit" name="edit" value="Update"> 
 						<a href="user_list.php">Back</a>
 					</td>
 				</tr>
