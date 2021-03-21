@@ -15,19 +15,23 @@ function validateUser($username, $password){
 	}
 }
 
-// function insertUser($user){
-// 	$conn = getConnection();
-// 	$sql = "insert into user values('', '{$user['username']}', '{$user['password']}', '{$user['email']}', '$user['type']')";
+function insertUser($user){
+	$conn = getConnection();
+	$username= $user['username'];
+	$password= $user['password'];
+	$email= $user['email'];
+	$type= $user['type'];
 
-// 	$result = mysqli_query($conn, $sql)
+	$sql = "insert into user values('', '{$username}', '{$password}', '{$email}', '$type')";
+	$result = mysqli_query($conn, $sql);
 
-// 	if($result){
-// 		return true;
-// 	}else{
-// 		return false;
-// 	}
+	if($result){
+		return true;
+	}else{
+		return false;
+	}
 
-// }
+}
 
 // function getUserbyId($id){
 	
