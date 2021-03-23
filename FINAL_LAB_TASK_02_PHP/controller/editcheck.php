@@ -1,7 +1,6 @@
 <?php ;
 	require_once('../model/db.php');
-    $conn = getConnection();
-
+    $con = getConnection();
 
     if(isset($_POST['edit'])){
         $name = $_POST['name'];
@@ -11,7 +10,7 @@
 
         $id= $_GET['id'];
         $sql="UPDATE `products` SET `name` = '$name', `buying_price` = '$buying_price', `selling_price` = '$selling_price',`displayable` = '$displayable' WHERE `id` =  $id;";
-        $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($con, $sql);
         if ($result=1){
             echo "updated <br>";
         echo    " <a href=\"../view/displayproduct.php\"> View Updated list </a> "; }
