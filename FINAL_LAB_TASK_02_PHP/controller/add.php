@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
             'selling_price'		=>$selling_price, 
             'displayable'		=>$displayable
         ];
-        print_r($product);
+        //print_r($product);
         $status = addProduct($product);				
 
 				if($status){

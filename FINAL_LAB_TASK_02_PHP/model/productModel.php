@@ -20,7 +20,17 @@ function addProduct($product){
 	}
 
 }
+function getAllUser(){
 
+	$conn = getConnection();
+	$sql = "select * from products";
+	$result = mysqli_query($conn, $sql);
+	$products = [];
+	while ($row = mysqli_fetch_assoc($result)) {
+		array_push($users, $row);
+	}
+	return $products;
+}
 
 
 ?>
