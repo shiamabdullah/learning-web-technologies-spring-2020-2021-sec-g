@@ -1,7 +1,9 @@
 <?php
 	
 require_once('db.php');
-
+$conn = getConnection();
+$query="select * from products";
+        $result= mysqli_query($conn,$query);
 
 function addProduct($product){
 	$conn = getConnection();
@@ -20,14 +22,14 @@ function addProduct($product){
 	}
 
 }
-function getAllUser(){
+function getAllProducts(){
 
 	$conn = getConnection();
 	$sql = "select * from products";
 	$result = mysqli_query($conn, $sql);
 	$products = [];
 	while ($row = mysqli_fetch_assoc($result)) {
-		array_push($users, $row);
+		array_push($products, $row);
 	}
 	return $products;
 }
