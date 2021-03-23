@@ -1,6 +1,7 @@
 <?php 
 	require ('../model/db.php');
     $conn = getConnection();
+    //last commit
 
     $id= $_GET['id'];
     $sql= "DELETE FROM `products` WHERE `product`.`id` ='$id' ";
