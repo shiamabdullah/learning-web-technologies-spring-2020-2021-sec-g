@@ -15,19 +15,35 @@ function countWords(str) {
 }
   function validateForm() {
 	var name = document.forms["myForm"]["name"].value;
+	var name = document.forms["myForm"]["email"].value;
+	var username = document.forms["myForm"]["dob"].value;
+	var pass = document.forms["myForm"]["password"].value;
+	var email = document.forms["myForm"]["email"].value;
+
 	if (name == "") {
 		alert("Name cant be empty");
 		name.focus();
 		return false;
-  				}
-	window.console.log(WordCount(name));
-
-  	elseif( WordCount(name)<1)
-  	{
-		alert("Must contain words");
-		name.focus();
+  		}
+	
+	elseif (email == "") {
+		alert("Email cant be empty");
+		email.focus();
 		return false;
-  	}
+  				}
+	
+	if (pass == "") {
+		alert("Pass cant be empty");
+		pass.focus();
+		return false;
+  				}	
+
+	if (dob == "") {
+		alert("Dob cant be empty");
+		dob.focus();
+		return false;
+  		}
+	
 }
 
 </script>
